@@ -4,42 +4,29 @@ describe "Static pages" do
 
 	let(:base_title) { "Radio Afera" }
 
+	subject { page }
+
 	describe "Home page" do
 
 		before { visit root_path }
 
-		it "should have title 'Radio Afera'" do
-			expect(page).to have_title(base_title)
-		end
-
-		it "should have content 'Radio Afera'" do
-			expect(page).to have_content("Welcome")
-		end
+		it { should have_title(base_title) }
+		it { should have_content("Welcome") }
 	end
 
 	describe "Contact page" do
 
-		before { visit 'static_pages/contact' }
+		before { visit contact_path }
 
-		it "should have title 'Radio Afera | Contact" do
-			expect(page).to have_title("#{base_title} | Contact")
-		end
-
-		it "should have content 'Contact'" do
-			expect(page).to have_content("Contact")
-		end
+		it { should have_title("#{base_title} | Contact") }
+		it { should have_content("Contact") }
 	end
 
 	describe "About page" do
 
-		before { visit 'static_pages/about' }
+		before { visit about_path }
 
-		it "should have title 'Radio Afera | About" do
-			expect(page).to have_title("#{base_title} | About")
-		end
-
-		it "should have content 'About'" do
-			expect(page).to have_content("About")
-		end
+		it { should have_title("#{base_title} | About") }
+		it { should have_content("About") }
 	end
 end
