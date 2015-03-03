@@ -1,0 +1,67 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* body */
+body {
+	background-color: #212121;
+	color: #fff;
+}
+
+.container {
+	width: 960px;
+}
+
+/* jumbotron */
+.jumbotron {
+	background-color: #000;
+	padding-bottom: 0px;
+	padding-top: 20px;
+	margin-bottom: 10px
+}
+
+/* navbar */
+.navbar {
+	margin-bottom: 0px;
+	font-size: 13px;
+	a {
+		color: #fff;
+		&:hover {
+			color: #86c840;
+		}
+	}
+
+	li {
+		a {
+			&:hover, &:focus {
+				background-color: transparent !important;
+			}
+		}
+	}
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.8em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  color: #f7ee27;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #f7ee27;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
