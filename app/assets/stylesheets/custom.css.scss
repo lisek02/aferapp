@@ -90,6 +90,13 @@ header {
 	float: none;
 	padding: 14px, 10px !important;
 }
+
+/* content */
+
+.gravatar {
+	margin-top: 20px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -104,10 +111,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: #f7ee27;
 }
@@ -115,4 +121,16 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  width: 100%;
+  margin-top: 45px;
 }

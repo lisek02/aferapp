@@ -1,0 +1,9 @@
+%h1.before= @user.login
+.row
+	.col-md-2
+		%p= gravatar_for @user
+	.col-md-3
+		%h2 Name Surname
+		%p= @user.email
+	.col-md-7
+		%h2 About myself
