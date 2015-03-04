@@ -1,13 +1,35 @@
-%ul.nav.navbar-nav
-  %li= link_to "Home", '/'
-  %li= link_to "People", '#'
-  %li= link_to "Aferzasta", '#'
-  %li= link_to "Schedule", '#'
-  %li= link_to "Music", '#'
-  %li= link_to "Recording Studio", '#'
-  %li= link_to "News", '#'
-  %li= link_to "About", about_path
-  %li= link_to "Advertising", '#'
-  %li= link_to "PRA", '#'
-  %li= link_to "Contact", contact_path
-  %li= link_to "Sign up", '#'
+%nav.navbar.navbar-inverse
+  .navbar-header
+    = link_to image_tag("logo.png", alt: "Radio Afera"), '#', id: "logo"
+    %button.navbar-toggle.collapsed{"type" => "button", "data-toogle" => "collapse", "data-target" => "#main-nav"}
+      %span.sr-only= "Toggle navigation"
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to image_tag("put_logo.png", alt: "Radio Afera"), '#', id: "put_logo"
+    #youtube.sprites
+      = link_to('#') do
+        %span
+    #twitter.sprites
+      = link_to('#') do
+        %span
+    #facebook.sprites
+      = link_to('#') do
+        %span
+
+  //Collect the nav links, forms, and other content for toggling
+  #main-nav.collapse.navbar-collapse
+    %ul.nav.navbar-nav
+      %li= link_to "Home", '/'
+      %li= link_to "People", '#'
+      %li= link_to "Aferzasta", '#'
+      %li= link_to "Schedule", '#'
+      %li= link_to "Music", '#'
+      %li= link_to "Recording Studio", '#'
+      %li= link_to "News", '#'
+      %li= link_to "Sponsorship", '#'
+      %li= link_to "About", about_path
+      %li= link_to "Advertising", '#'
+      %li= link_to "PRA", '#'
+      %li= link_to "Contact", contact_path
+      %li= link_to "Sign up", '#'
