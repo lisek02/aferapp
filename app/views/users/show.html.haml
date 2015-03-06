@@ -1,3 +1,5 @@
+= provide(:title, @user.login)
+
 %h1.before= @user.login
 .row
 	.col-md-1
@@ -5,6 +7,6 @@
 	.col-md-2
 		%h2 Name Surname
 		%p= @user.email
-	.col-md-8
+	.col-md-9
 		%h2 About myself
 		%p= @user.description

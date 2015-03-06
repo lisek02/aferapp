@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* body */
 body {
 	background-color: #212121;
@@ -15,6 +21,17 @@ body {
 header {
 	width: 100%;
 	background-color: #000;
+}
+
+/*alert */
+.alert {
+	margin: 20px 0;
+}
+
+.alert-success {
+	background-color: #81C341;
+	border-color: #81C341;
+	color: #212121;
 }
 
 /* navbar */
@@ -95,6 +112,60 @@ header {
 
 .gravatar {
 	margin-top: 20px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 2px solid #939393;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #212121;
+  border-radius: 5px;
+ 	@include box_sizing;
+ 	&:focus {
+ 		border-color: #81C341;
+ 	}
+}
+
+input {
+  height: auto !important;
+  &.btn-primary {
+  	color: #212121;
+  	border-color: #81C341;
+  	background-color: #81C341;
+  	width: 150px;
+  	&:hover {
+  		background-color: #212121;
+   		border-color: #81C341;
+  	}
+  	&:focus {
+  		background-color: #212121;
+   		border-color: #81C341;
+  	}
+
+  }
+}
+
+#error_explanation {
+  color: #81C341;
+  ul {
+    color: #81C341;
+    margin: 0 0 30px 0;
+  }
+}
+
+.alert-danger {
+	background-color: #81C341;
+	border-color: #81C341;
+	color: #212121;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
 /* typography */
