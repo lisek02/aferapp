@@ -17,6 +17,13 @@ body {
 	/*width: 1170px;*/
 }
 
+a {
+	color: #81C341;
+	&:hover {
+		color: #f7ee27;
+	}
+}
+
 /*header */
 header {
 	width: 100%;
@@ -135,6 +142,7 @@ input {
   	border-color: #81C341;
   	background-color: #81C341;
   	width: 150px;
+  	margin: 10px 0;
   	&:hover {
   		background-color: #212121;
    		border-color: #81C341;
