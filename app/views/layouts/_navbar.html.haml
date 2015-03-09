@@ -32,4 +32,13 @@
       %li= link_to "Advertising", '#'
       %li= link_to "PRA", '#'
       %li= link_to "Contact", contact_path
-      %li= link_to "Sign up", signup_path
+      - if logged_in?
+        %li.dropdown
+          %a.dropdown-toggle{ href: "#", role: "button", "data-toggle" => "dropdown", "data-target" => "#" } Profile
+          %ul.dropdown-menu
+            %li= link_to "Profile", current_user
+            %li= link_to "Settings", '#'
+            %li.divider
+            %li= link_to "Log out", logout_path, method: "delete"
+      - else
+        %li= link_to "Log in", login_path

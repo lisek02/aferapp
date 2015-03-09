@@ -37,6 +37,8 @@ gem 'bootstrap-sass'
 gem 'bcrypt'
 
 gem 'factory_girl_rails'
+
+gem 'rspec-its'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

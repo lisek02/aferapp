@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'rspec/its'
 
 describe User do
 	before { @user = User.new(login: "example", email: "user@example.com",
@@ -12,6 +13,7 @@ describe User do
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:remember_token) }
 	it { should respond_to(:description) }
 
 	it { should be_valid }
@@ -90,5 +92,10 @@ describe User do
 				expect(@user).to be_valid
 			end
 		end
+	end
+
+	describe "remember_token" do
+		before { @user.save }
+		its(:remember_token) { should_not be_blank }
 	end
 end
