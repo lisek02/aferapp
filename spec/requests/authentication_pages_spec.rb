@@ -32,7 +32,7 @@ describe "Authentication" do
 			end
 		end
 
-		describe "with invalid informatino" do
+		describe "with invalid information" do
 			before { click_button "Log in" }
 
 			it { should have_title(full_title('Log in')) }

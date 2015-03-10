@@ -94,8 +94,9 @@ describe User do
 		end
 	end
 
-	describe "remember_token" do
-		before { @user.save }
-		its(:remember_token) { should_not be_blank }
+	describe "authenticated for a user with nil digest" do
+		it "should return nil" do
+			expect(@user.authenticated?('')).to be_falsy
+		end
 	end
 end
