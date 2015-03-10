@@ -52,4 +52,38 @@ describe "User pages"	do
 			end
 		end
 	end
+
+	describe "edit" do
+		let(:user) { FactoryGirl.create(:user) }
+
+		before do
+			log_in user
+			visit edit_user_path(user)
+		end
+
+		describe "with valid information" do
+			let(:new_login) { "newlogin" }
+			let(:new_email) { "new@example.com" }
+
+			before do
+				fill_in "Login",				with: new_login
+				fill_in "Email",				with: new_email
+				fill_in "Password",			with: user.password
+				fill_in "Password confirmation", with: user.password_confirmation
+				click_button "Save changes"
+			end
+
+			it { should have_title(full_title(new_login)) }
+			it { should have_selector('div.alert.alert-success') }
+			it { should have_link('Log out', href: logout_path) }
+			specify { expect(user.reload.login).to eq(new_login) }
+			specify { expect(user.reload.email).to eq(new_email) }
+		end
+
+		describe "with invalid information" do
+			before { click_button "Save changes" }
+
+			it { should have_content('error') }
+		end
+	end
 end

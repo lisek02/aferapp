@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SessionsHelper. For example:
-#
-# describe SessionsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe SessionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+def log_in(user, options={})
+	if options[:no_capybara]
+		#sign in without using no_capybara
+		remember_token = User.new_remember_token
+		cookied[:remember_token] = remember_token
+		user.update_attribute(:remember_token, User.digest(remember_token))
+	else
+		visit login_path
+		fill_in "Email",		with: user.email
+		fill_in "Password", with: user.password
+		click_button "Log in"
+	end
 end
