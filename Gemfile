@@ -39,6 +39,8 @@ gem 'bcrypt'
 gem 'factory_girl_rails'
 
 gem 'rspec-its'
+
+gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
