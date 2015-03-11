@@ -120,10 +120,12 @@ header {
 }
 
 /* content */
-
-.gravatar {
-	margin-top: 20px;
+.user {
+	.gravatar {
+		margin-top: 20px;
+	}
 }
+
 
 /* forms */
 
@@ -235,4 +237,24 @@ p {
   color: #fff;
   width: 100%;
   margin-top: 45px;
+}
+
+/* user index */
+.users {
+  margin: 20px;
+
+  .gravatar {
+  	margin-right:	20px;
+  }
+}
+
+.text-top {
+	vertical-align: top;
+}
+
+.text-middle {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
 }
