@@ -258,3 +258,26 @@ p {
 .text-right {
 	text-align: right;
 }
+
+/* pagination */
+.pagination {
+	li {
+		a {
+			background-color: inherit !important;
+			border: none;
+			color: #fff;
+			&:hover {
+				color: #81C341;
+			}
+		}
+	}
+	.active {
+		a {
+			color: #F7EE27;
+			&:hover {
+				color: #777777;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
