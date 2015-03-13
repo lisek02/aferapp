@@ -99,5 +99,26 @@ describe "User pages"	do
 		end
 	end
 
-		
+	describe "index" do
+		let(:user) { FactoryGirl.create(:user) }
+		let(:admin_user) { FactoryGirl.create(:admin) }
+
+		before do
+			log_in admin_user
+			visit users_path
+		end
+
+		it { should have_title(full_title('All users')) }
+		it { should have_content('Users list') }
+
+		describe "delete links" do
+			it { should have_link('delete', href: user_path(user)) }
+			it "should be able to delete users" do
+				expect do
+					click_link('delete', match: :first)
+				end.to change(User, :count).by(-1)
+			end
+			it { should_not have_link('delete', href: user_path(admin_user)) }
+		end
+	end		
 end
