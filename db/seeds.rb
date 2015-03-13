@@ -10,14 +10,18 @@ user = User.create(	login: 'test',
 										email: 'test@example.com',
 										password: 'foobar',
 										password_confirmation: 'foobar',
-										description: 'lorem ipsum')
+										description: 'lorem ipsum',
+										activated: true,
+										activated_at: Time.zone.now)
 
 admin = User.create( login: 'admin',
 										email: 'admin@example.com',
 										password: 'foobar',
 										password_confirmation: 'foobar',
 										description: 'lorem ipsum',
-										admin: true)
+										admin: true,
+										activated: true,
+										activated_at: Time.zone.now)
 
 99.times do |n|
 	login = Faker::Internet.user_name
@@ -29,6 +33,8 @@ admin = User.create( login: 'admin',
 											email: email,
 											password: password,
 											password_confirmation: password,
-											description: description)
+											description: description,
+											activated: true,
+											activated_at: Time.zone.now)
 end
 
