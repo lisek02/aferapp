@@ -15,8 +15,18 @@ describe User do
 	it { should respond_to(:authenticate) }
 	it { should respond_to(:remember_token) }
 	it { should respond_to(:description) }
+	it { should respond_to(:admin) }
 
 	it { should be_valid }
+
+	describe "with admin attribute set to true" do
+		before do
+			@user.save!
+			@user.toggle!(:admin)
+		end
+
+		it { should be_admin }
+	end
 
 	describe "when user login is not present" do
 		before { @user.login = "" }

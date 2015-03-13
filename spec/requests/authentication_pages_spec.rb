@@ -57,6 +57,11 @@ describe "Authentication" do
 					before { patch user_path(user) }
 					specify { expect(response).to redirect_to(login_path) }
 				end
+
+				describe "visiting users list page" do
+					before { visit users_path }
+					it { should have_content('Welcome') }
+				end
 			end
 
 			describe "when attempting to visit a protected page" do
@@ -72,6 +77,18 @@ describe "Authentication" do
 						expect(page).to have_title('Edit user')
 					end
 				end
+			end
+		end
+
+		describe "as non-admin user" do
+			let(:user) { FactoryGirl.create(:user) }
+			let(:non_admin) { FactoryGirl.create(:user) }
+
+			before { log_in non_admin, no_capybara: true }
+
+			describe "visiting user list page" do
+				before { visit users_path }
+				it { should have_content('Welcome') }
 			end
 		end
 

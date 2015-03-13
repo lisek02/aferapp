@@ -10,7 +10,8 @@ user = User.create(	login: 'test',
 										email: 'text@example.com',
 										password: 'foobar',
 										password_confirmation: 'foobar',
-										description: 'lorem ipsum')
+										description: 'lorem ipsum',
+										admin: true)
 
 99.times do |n|
 	login = Faker::Internet.user_name
