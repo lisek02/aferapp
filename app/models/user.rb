@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	end
 
 	def forget
-		updivate_attribute(:remember_digest, nil)
+		update_attribute(:remember_digest, nil)
 	end
 
 	private
